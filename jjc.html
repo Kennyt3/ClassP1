@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Leaflet sample</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <!-- <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script> -->
+  </head>
+
+  <body>
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+      "
+    >
+      <div id="map" style="width: 500px; height: 300px"></div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+      // Creating map options
+      var mapOptions = {
+        center: [17.385044, 78.486671],
+        zoom: 10,
+      }
+
+      // Creating a map object
+      var map = new L.map('map', mapOptions)
+
+      // Creating a Layer object
+      var layer = new L.TileLayer(
+        'https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=LWYTpb1ZYXNDR3ugHa9V',
+        {
+          attribution:
+            '<a href="https://www.maptiler.com/copyright/" target="_blank">copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">copy; OpenStreetMap contributors </a>',
+        }
+      )
+
+      // Adding layer to the map
+      map.addLayer(layer)
+    </script>
+  </body>
+</html>
